@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Table from './Table'
+import List from './List'
 
 
 class App extends Component {
@@ -10,7 +10,7 @@ class App extends Component {
     return (
     <div className="App">
       <h1>Hello World</h1>
-      <Table />
+      <List />
     </div>
     );
   }

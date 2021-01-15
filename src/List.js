@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import { fetchAllMovie } from './Client';
+import{
+    Table
+} from 'antd';
 
 
-class Table extends  Component {
+class List extends  Component {
 
     constructor(props){
         super(props);
@@ -36,19 +39,42 @@ handlerClickMovie () {
 
     const { movies } = this.state;   
         console.log(movies);
-    if(movies.length) {
+    if(movies && movies.length) {
 
-        return movies.map((movie, index) => {
-            return(
-                <div key={index}>
-                    <h2>{movie.title}</h2>
-                    <p>{movie.description}</p>
-                    <p>{movie.releaseYear}</p>
-                    <p>{movie.length}</p>
-
-                </div>
+        const columns = [
+            {
+                title: 'id',
+                dataIndex: 'id',
+                key: 'id'
+            },
+            {
+                title: 'title',
+                dataIndex: 'title',
+                key: 'title'
+            },
+            {
+                title: 'description',
+                dataIndex: 'description',
+                key: 'description'
+            },
+            {
+                title: 'releaseYear',
+                dataIndex: 'releaseYear',
+                key: 'releaseYear'
+            },
+            {
+                title: 'length',
+                dataIndex: 'length',
+                key: 'length'
+            },
+    
+         ];
+            return (
+                <Table 
+                    dataSource={movies} 
+                    columns={columns} 
+                    rowKey='id'/>
             )
-        })
     }
       
         
@@ -61,4 +87,4 @@ handlerClickMovie () {
 }
 
 
-export default Table;
+export default List;
