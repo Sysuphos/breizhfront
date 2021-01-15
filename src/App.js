@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import { PageHeader } from 'antd';
 import List from './List'
 
 
@@ -9,7 +10,11 @@ class App extends Component {
    
     return (
     <div className="App">
-      <h1>Hello World</h1>
+      <PageHeader 
+      className="breizhvideo-header"
+      onBack={() => null}
+      title="BreizhVideo"
+      subTitle="programmation"/>
       <List />
     </div>
     );
